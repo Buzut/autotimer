@@ -1,6 +1,6 @@
 {
   "name": "autotimer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Super simple timer that resets itself when called again.",
   "main": "index",
   "repository": {
