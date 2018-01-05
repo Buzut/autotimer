@@ -2,9 +2,6 @@
 
 Super simple timer that resets itself when called again. In the end, only the last call is taken into account.
 
-Super usefull to trigger actions on browser resize or on scroll. For instance when you want to execute actions when browser __is resized__ and __not while resizing__.
-
-
 ## Installation
 
 ```
@@ -15,22 +12,38 @@ npm install autotimer
 
 ```js
 // require using commonJS
-const autoTimer = require('autotimer');
+const AutoTimer = require('autotimer');
 
 // or in es6, using a module bundler like webpack
-import autoTimer from 'autotimer';
+import AutoTimer from 'autotimer';
+
+// instantiate class
+const timer = new Autotimer();
 
 // just call the function with a delay in ms
-autoTimer(delay, function);
+timer(delay, callback);
 
 // like setTimeout, it returns a timer
-const timer = autoTimer(delay, function);
+const timerOne = timer(delay, callback);
 
 // that you can cancel if needed
-clearTimeout(timer);
+clearTimeout(timerOne);
 
-// will call arrangeMasonry only once after browser has finished resizing
+/**
+ * will call "responsive" only once the browser has finished resizing
+ * and "scrolled" when the user has finished scrolling
+ */
+
+// init timers
+const respTimer = new AutoTimer();
+const scrollTimer = new Autotimer();
+
+// call them
 window.addEventListener('resize', () => {
-  autoTimer(100, () => arrangeMasonry());
+  respTimer(100, responsive);
+});
+
+window.addEventListener('scroll', () => {
+  scrollTimer(200, scrolled);
 });
 ```
