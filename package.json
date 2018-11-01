@@ -14,7 +14,8 @@
     "event",
     "eventemitter",
     "timer",
-    "timeout"
+    "timeout",
+    "debounce"
   ],
   "author": "Buzut (buzut.fr)",
   "license": "BSD-3-Clause",

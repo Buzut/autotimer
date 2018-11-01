@@ -1,6 +1,8 @@
 # autoTimer
 
-Super simple timer that resets itself when called again. In the end, only the last call is taken into account.
+Automatically debounced timer.
+
+Even if called if called multiple times, only the last call will be executed.
 
 ## Installation
 
@@ -28,6 +30,14 @@ const timerOne = timer(delay, callback);
 
 // that you can cancel if needed
 clearTimeout(timerOne);
+
+function responsive() {
+  // do things
+}
+
+function scrolled() {
+  // do things
+}
 
 /**
  * will call "responsive" only once the browser has finished resizing
