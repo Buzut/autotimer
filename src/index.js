@@ -1,4 +1,4 @@
-class autoTimer {
+class AutoTimer {
     constructor() {
         let timer;
 
@@ -11,4 +11,4 @@ class autoTimer {
     }
 }
 
-export default autoTimer;
+export default AutoTimer;
